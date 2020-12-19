@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My App</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+</head>
+<body>
+    <div id="app">
+        <h1 v-bind:title="menu">{{ title }}</h1>
+
+        <p v-text="content"></p>
+
+        <input v-model="content" type="text">
+    </div>
+
+<script>
+   new Vue({
+        el: '#app',
+        data:{
+            title: 'My Title Again',
+            content: 'Here is content',
+            menu: "Test here"
+
+        }
+
+   });
+
+</script>
+    
+</body>
+</html>

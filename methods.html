@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My App</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+</head>
+<body>
+    <div id="app">
+     <input v-model = "price" type="text">
+     <div>{{ moneyFormat(tax) }}</div>
+     <div>{{ moneyFormat(total) }}</div>
+    </div>
+
+<script>
+   new Vue({
+        el: '#app',
+        data:{
+           price:100
+        },
+        computed: {
+            tax: function(){
+                return this.price * 0.2;
+            },
+            total: function(){
+                return parseInt(this.price) + parseInt(this.tax);
+            }
+        },
+        methods: {
+            moneyFormat: function(price){
+                return "$" + price;
+            }
+        }
+
+   });
+
+</script>
+    
+</body>
+</html>
